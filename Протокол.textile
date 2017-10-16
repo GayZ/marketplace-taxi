@@ -35,7 +35,7 @@ h3. object JsonRpcResponse
 h3. object JsonRpcError
 
 |_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
-|code|number|обязательный|[[Код ошибки|Коды ошибок]]|
+|code|[[number ErrorCode|Коды-ошибок#number-errorcode]]|обязательный|Код ошибки|
 |message|string|обязательный|Локализованное описание ошибки|
 
 ----
