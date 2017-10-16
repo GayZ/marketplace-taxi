@@ -70,10 +70,12 @@ h2. Пример
 
 <pre>
 {
-  "status": 6,
-  "cancellationCause": {
-    "kind": 5,
-    "comment": "рассказывал несмешные анекдоты"
+  "result": {
+    "status": 6,
+    "cancellationCause": {
+      "kind": 5,
+      "comment": "рассказывал несмешные анекдоты"
+    }
   }
 }
 </pre>
