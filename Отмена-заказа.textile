@@ -1,0 +1,61 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Orders.cancel|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|orderId|number|обязательный|Идентификатор заказа|
+|cancellationCause|object CancellationCause|обязательный|Причина отмены|
+
+h3. object CancellationCause
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|kind|number CancellationCauseKind|обязательный|Тип причины|
+|comment|string|опциональный|Комментарий|
+
+h3. number CancellationCauseKind
+
+|_.Значение|_.Описание|
+|1|По желанию клиента|
+|2|По вине диспетчерской|
+|3|По вине водителя|
+|4|Технические проблемы|
+|5|Неадекватный клиент|
+|6|Клиент уже уехал|
+|7|Клиент не берет трубку|
+|8|Автоматическая отмена|
+
+h2. Пример
+
+<pre>
+{
+  "method": "Orders.cancel",
+  "version": "1.0",
+  "params": {
+    "orderId": 20333,
+    "cancellationCause": {
+      "kind": 5,
+      "comment": "рассказывал несмешные анекдоты"
+    }
+  }
+}
+</pre>
+
+----
+
+h1. Ответ
+
+|*result*|nothing|
+
+h2. Пример
+
+<pre>
+{}
+</pre>
