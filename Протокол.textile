@@ -6,8 +6,8 @@ h1. HTTP-запрос
 
 |*Метод*|POST|
 |*Путь*|/api/integration/rpc|
-|/2.*Заголовки*|@Authorization@: @{apikey}@, где {apikey} - ключ, выдаваемый администрацией HiveTaxi|
-|@Content-Type@: @application/json; charset=utf-8@|
+|*Обязательные заголовки*|@Authorization@: @{apikey}@, где {apikey} - ключ, выдаваемый администрацией HiveTaxi|
+|*Опциональные заголовки*|@Accept-Language@: @{locale}@, где {locale} - локаль, соответствующая стандарту "RFC 2616":https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4, которая будет использована для локализации сообщений об ошибках и прочих локализуемых сообщений и атрибутов (пример: en-US)|
 |*Тело* (JSON)|object JsonRpcRequest|
 
 h3. object JsonRpcRequest
@@ -22,7 +22,6 @@ h3. object JsonRpcRequest
 
 h1. HTTP-ответ
 
-|*Заголовки*|@Content-Type@: @application/json; charset=utf-8@|
 |*Тело* (JSON)|object JsonRpcResponse|
 
 h3. object JsonRpcResponse
