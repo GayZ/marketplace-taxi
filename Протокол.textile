@@ -22,6 +22,7 @@ h3. object JsonRpcRequest
 
 h1. HTTP-ответ
 
+|*Статус*|200|
 |*Тело* (JSON)|object JsonRpcResponse|
 
 h3. object JsonRpcResponse
@@ -39,7 +40,13 @@ h3. object JsonRpcError
 
 ----
 
-h2. См. также
+h1. Исключительные ситуации
+
+* В случае отсутствия или невалидности заголовка @Authorization@, сервер вернет HTTP-ответ с кодом 401 и локализованным сообщением в теле.
+
+----
+
+h1. См. также
 
 * [[Типы JSON атрибутов]]
 * Протокол "JSON-RPC":http://www.jsonrpc.org/specification (в данном API используется измененная версия)
