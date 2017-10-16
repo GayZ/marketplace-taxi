@@ -1,0 +1,80 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Orders.submit|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|fareId|number|обязательный|Идентификатор клиентского тарифа (выдается администрацией HiveTaxi)|
+|phone|string|обязательный|Телефон клиента|
+|route|array [[object ClientAddress|Структура-адреса#object-clientaddress]]|обязательный|Маршрут|
+|time|[[string OffsetDateTime|Форматы-даты-и-времени#string-offsetdatetime]]|опциональный|Время заказа (отсутствует, если текущий)|
+
+h2. Пример
+
+<pre>
+{
+  "method": "Orders.submit",
+  "version": "1.0",
+  "params": {
+    "fareId": 1225,
+    "phone": "+79123456789",
+    "route": {
+      "address": {
+        "name": "Россия, обл Омская, г Омск, б-р Архитекторов, 35 (Мега Омск, семейный торговый центр)",
+        "components": [
+          {
+            "level": 0,
+            "name": " Россия"
+          }, {
+            "level": 1,
+            "name": "обл Омская"
+          }, {
+            "level": 4,
+            "name": "г Омск"
+          }, {
+            "level": 7,
+            "name": "б-р Архитекторов"
+          }, {
+            "level": 8,
+            "name": "35"
+          }, {
+            "level": 9,
+            "name": "Мега Омск, семейный торговый центр"
+          }
+        ],
+        "types": {
+          "pointType": 63,
+          "aliasType": 3
+        },
+        "position": {
+          "lat": 54.972549,
+          "lon": 73.28389
+        }
+      },
+      "comment": "вход IKEA, подземная парковка"
+    },
+    "time": "2017-10-16T17:00:00+06:00"
+  }
+}
+</pre>
+
+----
+
+h1. Ответ
+
+|*result*|number|Идентификатор заказа|
+
+h2. Пример
+
+<pre>
+{
+  "result": 20333
+}
+</pre>
