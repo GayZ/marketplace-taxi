@@ -1,0 +1,40 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Orders.getIdentifiers|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|dispatchingServiceId|number|обязательный|Идентификатор диспетчерской (выдается администрацией HiveTaxi)|
+
+h2. Пример
+
+<pre>
+{
+  "method": "Orders.getIdentifiers",
+  "version": "1.0",
+  "params": {
+    "dispatchingServiceId": 101
+  }
+}
+</pre>
+
+----
+
+h1. Ответ
+
+|*result*|array number|
+
+h2. Пример
+
+<pre>
+{
+  "result": [20333,20339]
+}
+</pre>
