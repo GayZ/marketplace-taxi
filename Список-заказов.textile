@@ -1,0 +1,51 @@
+<div align="center">*Структура соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Orders.getList|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|dispatchingServiceId|number|обязательный|Идентификатор диспетчерской (выдается администрацией HiveTaxi)|
+
+h2. Пример
+
+<pre>
+{
+  "method": "Orders.getList",
+  "version": "1.0",
+  "params": {
+    "dispatchingServiceId": 101
+  }
+}
+</pre>
+
+----
+
+h1. Ответ
+
+|*result*|array object Order|
+
+h3. object Order
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|id|number|обязательный|Идентификатор заказа|
+|status|number OrderStatus|обязательный|Статус заказа|
+|phone|string|обязательный|Телефон клиента|
+|route|array [[object ClientAddress|Структура-адреса#object-clientaddress]]|обязательный|Маршрут|
+|time|[[string OffsetDateTime|Форматы-даты-и-времени#string-offsetdatetime]]|опциональный|Время заказа (отсутствует, если текущий)|
+|created|[[string OffsetDateTime|Форматы-даты-и-времени#string-offsetdatetime]]|обязательный|Время создания заказа|
+
+h3. number OrderStatus
+
+|_.Значение|_.Описание|
+|1|Не распределен|
+|7|Зарезервирован водителем (только если предварительный)|
+|2|Назначен водитель|
+|3|Водитель по адресу (ожидает клиента)|
+|4|Заказ выполняется|
