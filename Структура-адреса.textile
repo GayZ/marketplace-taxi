@@ -11,7 +11,7 @@ h2. object Address
 |_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
 |name|string|обязательный|Форматированное наименование|
 |components|array object AddressComponent|опциональный|Компоненты|
-|types|object AddressTypes|опциональный|Идентификатор типа|
+|types|object AddressTypes|опциональный|Типы точки, быстрого адреса|
 |position|object GpsPosition|опциональный|Координаты|
 
 h2. object AddressComponent
