@@ -1,0 +1,34 @@
+Используется измененный протокол "JSON-RPC":http://www.jsonrpc.org/specification.
+
+h2. Запрос
+
+*Метод*: POST
+*URI*: /api/hooks/rpc
+*Content-Type*: application/json; charset=utf-8
+*Body*: JsonRpcRequest
+
+h3. JsonRpcRequest
+
+|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
+|method|string|true|Команда|
+|version|string|true|Версия|
+|params|json|false|Параметры (любой валидный JSON, включая объекты, массивы, строки, числа, булевы значения)|
+|id|number|false|Идентификатор запроса|
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: JsonRpcResponse.
+
+h3. JsonRpcResponse
+
+|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
+|result|json|false|Результат (в случае успеха)|
+|error|object JsonRpcError|false|Ошибка (в случае неудачи)|
+|id|number|false|Идентификатор из запроса|
+
+h3. JsonRpcError
+
+|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
+|code|number|true|Код ошибки|
+|message|string|true|Локализованное описание ошибки|
