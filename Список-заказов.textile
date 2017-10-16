@@ -40,6 +40,7 @@ h3. object Order
 |route|array [[object ClientAddress|Структура-адреса#object-clientaddress]]|обязательный|Маршрут|
 |time|[[string OffsetDateTime|Форматы-даты-и-времени#string-offsetdatetime]]|опциональный|Время заказа (отсутствует, если текущий)|
 |created|[[string OffsetDateTime|Форматы-даты-и-времени#string-offsetdatetime]]|обязательный|Время создания заказа|
+|source|number OrderSource|обязательный|Источник заказа|
 
 h3. number OrderStatus
 
@@ -49,6 +50,14 @@ h3. number OrderStatus
 |2|Назначен водитель|
 |3|Водитель по адресу (ожидает клиента)|
 |4|Заказ выполняется|
+
+h3. number OrderSource
+
+|_.Значение|_.Описание|
+|1|Диспетчерская|
+|2|Клиентский виджет|
+|3|Клиентское приложение|
+|4|Водитель|
 
 h2. Пример
 
