@@ -84,6 +84,6 @@ h2. Пример
       "lon": 73.28389
     }
   },
-  "entrance": "3"
+  "entrance": "IKEA"
 }
 </pre>
