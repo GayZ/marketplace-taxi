@@ -1,34 +1,42 @@
-Используется измененный протокол "JSON-RPC":http://www.jsonrpc.org/specification.
+h1. HTTP-запрос
 
-h2. Запрос
+|*Метод*|POST|
+|*Путь*|/api/integration/rpc|
+|/2.*Заголовки*|@Authorization@: @{apikey}@, где {apikey} - ключ, выдаваемый администрацией HiveTaxi|
+|@Content-Type@: @application/json; charset=utf-8@|
+|*Тело* (JSON)|object JsonRpcRequest|
 
-*Метод*: POST
-*URI*: /api/hooks/rpc
-*Content-Type*: application/json; charset=utf-8
-*Body*: JsonRpcRequest
+h3. object JsonRpcRequest
 
-h3. JsonRpcRequest
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|method|string|обязательный|Команда (значение определяется в описании конкретного запроса)|
+|version|string|обязательный|Версия (значение определяется в описании конкретного запроса)|
+|params|json|опциональный|Параметры ([[тип|Типы JSON атрибутов]] определяется в описании конкретного запроса)|
+|id|number|опциональный|Идентификатор запроса|
 
-|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
-|method|string|true|Команда|
-|version|string|true|Версия|
-|params|json|false|Параметры (любой валидный JSON, включая объекты, массивы, строки, числа, булевы значения)|
-|id|number|false|Идентификатор запроса|
+----
 
-h2. Ответ
+h1. HTTP-ответ
 
-*Content-Type*: application/json; charset=utf-8
-*Body*: JsonRpcResponse.
+|*Заголовки*|@Content-Type@: @application/json; charset=utf-8@|
+|*Тело* (JSON)|object JsonRpcResponse|
 
-h3. JsonRpcResponse
+h3. object JsonRpcResponse
 
-|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
-|result|json|false|Результат (в случае успеха)|
-|error|object JsonRpcError|false|Ошибка (в случае неудачи)|
-|id|number|false|Идентификатор из запроса|
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|result|json|опциональный|Результат ([[тип|Типы JSON атрибутов]] определяется в описании конкретного запроса) (в случае успеха)|
+|error|object JsonRpcError|опциональный|Ошибка (в случае неудачи)|
+|id|number|опциональный|Идентификатор из запроса|
 
-h3. JsonRpcError
+h3. object JsonRpcError
 
-|_.Атрибут|_.Тип|_.Обязательный|_.Описание|
-|code|number|true|Код ошибки|
-|message|string|true|Локализованное описание ошибки|
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|code|number|обязательный|Код ошибки|
+|message|string|обязательный|Локализованное описание ошибки|
+
+----
+
+h2. См. также
+
+* [[Типы JSON атрибутов]]
+* Протокол "JSON-RPC":http://www.jsonrpc.org/specification (в данном API используется измененная версия)
