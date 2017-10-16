@@ -1,14 +1,14 @@
 Все форматы соответствуют стандарту "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601.
 
-h3. OffsetDateTime
+h3. string OffsetDateTime
 
 Формат: @YYYY-MM-DDThh:mm:ss±hh:mm@
 
-h3. LocalDateTime
+h3. string LocalDateTime
 
 Формат: @YYYY-MM-DDThh:mm:ss@
 
-h3. Duration
+h3. string Duration
 
 Раздел в википедии: "ISO 8601: Durations":https://en.wikipedia.org/wiki/ISO_8601#Durations
 
