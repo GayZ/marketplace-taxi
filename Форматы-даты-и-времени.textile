@@ -10,10 +10,10 @@ h3. string LocalDateTime
 
 h3. string Duration
 
-Раздел в википедии: "ISO 8601: Durations":https://en.wikipedia.org/wiki/ISO_8601#Durations
-
 Формат: @PnYnMnDTnHnMnS@
 
 Если @n@ равно нулю, указывать не обязательно.
 
 Пример: @PT35M13.106S@
+
+Раздел в википедии: "ISO 8601: Durations":https://en.wikipedia.org/wiki/ISO_8601#Durations
