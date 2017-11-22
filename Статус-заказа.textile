@@ -21,6 +21,7 @@ h2. Пример
   "method": "Orders.getStatus",
   "version": "1.0",
   "params": {
+    "dispatchingServiceId": 101,
     "orderId": 20333
   }
 }
