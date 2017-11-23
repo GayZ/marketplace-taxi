@@ -11,7 +11,6 @@ h1. Запрос
 h3. object Params
 
 |_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
-|dispatchingServiceId|number|обязательный|Идентификатор диспетчерской (выдается администрацией HiveTaxi)|
 |orderId|number|обязательный|Идентификатор заказа|
 
 h2. Пример
@@ -21,7 +20,6 @@ h2. Пример
   "method": "Orders.getStatus",
   "version": "1.0",
   "params": {
-    "dispatchingServiceId": 101,
     "orderId": 20333
   }
 }
