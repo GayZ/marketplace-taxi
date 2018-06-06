@@ -1,0 +1,42 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Drivers.withdrawMoney|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|phone|string|обязательный|Телефон водителя|
+|amount|number|обязательный|Сумма для списания (в копейках)|
+|currency|number|обязательный|Код валюты согласно ISO 4217|
+
+h2. Пример
+
+```json
+{
+  "method": "Drivers.withdrawMoney",
+  "version": "1.0",
+  "params": {
+    "phone": "+71234567890",
+    "amount": 5000,
+    "currency": 643
+  }
+}
+```
+
+----
+
+h1. Ответ
+
+|*result*|nothing|
+
+h2. Пример
+
+```json
+{}
+```
