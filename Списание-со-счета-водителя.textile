@@ -45,7 +45,7 @@ h1. Ответ
 h3. object Result
 
 |_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
-|failures|array object Failure|опциональный|Ошибки|
+|failures|array object Failure|обязательный|Ошибки|
 
 h3. object Failure
 
