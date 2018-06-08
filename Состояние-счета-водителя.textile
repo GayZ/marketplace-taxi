@@ -36,7 +36,7 @@ h3. object Result
 |_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
 |currency|number|обязательный|Код валюты согласно ISO 4217|
 |states|array object State|обязательный|Состояния счетов|
-|failures|array object Failure|опциональный|Ошибки|
+|failures|array object Failure|обязательный|Ошибки|
 
 h3. object State
 
