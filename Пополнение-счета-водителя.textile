@@ -40,10 +40,28 @@ h2. Пример
 
 h1. Ответ
 
-|*result*|nothing|
+|*result*|object Result|
+
+h3. object Result
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|failures|array object Failure|опциональный|Ошибки|
+
+h3. object Failure
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|phone|string|обязательный|Телефон, с которым были проблемы|
+|cause|string|обязательный|Причина ошибки|
 
 h2. Пример
 
 ```json
-{}
+{
+  "result": {
+    "failures": [{
+      "phone": "+71234567890",
+      "cause": "Account not found"
+    }]
+  }
+}
 ```
