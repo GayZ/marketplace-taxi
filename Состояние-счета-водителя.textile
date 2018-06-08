@@ -1,0 +1,69 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Drivers.getAccountState|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|phones|array string|обязательный|Телефоны водителей|
+
+h2. Пример
+
+```json
+{
+  "method": "Drivers.getAccountState",
+  "version": "1.0",
+  "params": {
+    "phones": ["+71234567890","+71234567891"]
+  }
+}
+```
+
+----
+
+h1. Ответ
+
+|*result*|object Result|
+
+h3. object Result
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|currency|number|обязательный|Код валюты согласно ISO 4217|
+|states|array object State|обязательный|Состояния счетов|
+|failures|array object Failure|опциональный|Ошибки|
+
+h3. object State
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|phone|string|обязательный|Телефон водителя|
+|balance|number|обязательный|Баланс по счету (в копейках)|
+
+h3. object Failure
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|phone|string|обязательный|Телефон, с которым были проблемы|
+|cause|string|обязательный|Причина ошибки|
+
+h2. Пример
+
+```json
+{
+  "result": {
+    "currency": 643,
+    "states": [{
+      "phone": "+71234567891",
+      "balance": 5000,
+    }],
+    "failures": [{
+      "phone": "+71234567890",
+      "cause": "Account not found"
+    }]
+  }
+}
+```
