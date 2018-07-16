@@ -15,7 +15,7 @@ h3. object Params
 
 h2. Пример
 
-<pre>
+```json
 {
   "method": "Orders.getAssignee",
   "version": "1.0",
@@ -23,7 +23,7 @@ h2. Пример
     "orderId": 20333
   }
 }
-</pre>
+```
 
 ----
 
@@ -47,8 +47,8 @@ h3. object ResultAssignee
 
 h2. Пример
 
-<pre>
+```json
 {
   "result": {}
 }
-</pre>
+````
