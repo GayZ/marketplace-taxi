@@ -1,0 +1,54 @@
+<div align="center">*Структура запроса соответствует [[Протоколу|Протокол]].*</div>
+
+----
+
+h1. Запрос
+
+|*method*|Orders.getAssignee|
+|*version*|1.0|
+|*params*|object Params|
+
+h3. object Params
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|orderId|number|обязательный|Идентификатор заказа|
+
+h2. Пример
+
+<pre>
+{
+  "method": "Orders.getAssignee",
+  "version": "1.0",
+  "params": {
+    "orderId": 20333
+  }
+}
+</pre>
+
+----
+
+h1. Ответ
+
+|*result*|object Result|
+
+h3. object Result
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|assignee|object ResultAssignee|опциональный|Назначенный водитель|
+
+h3. object ResultAssignee
+
+|_.Атрибут|_.[[Тип|Типы JSON атрибутов]]|_.Обязательность|_.Описание|
+|firstName|string|обязательный|Имя|
+|middleName|string|опциональный|Отчество|
+|lastName|string|обязательный|Фамилия|
+|callSign|string|опциональный|Позывной|
+|phone|string|обязательный|Телефон|
+
+h2. Пример
+
+<pre>
+{
+  "result": {}
+}
+</pre>
