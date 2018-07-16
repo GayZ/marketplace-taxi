@@ -49,6 +49,14 @@ h2. Пример
 
 ```json
 {
-  "result": {}
+  "result": {
+    "assignee": {
+      "firstName": "Иван",
+      "middleName": "Иванович",
+      "lastName": "Иванов",
+      "callSign": "564",
+      "phone": "+71234567890"
+    }
+  }
 }
 ```
